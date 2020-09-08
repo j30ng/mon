@@ -6,7 +6,7 @@ const router = express.Router();
 router.get('/google', async function (req, res, next) {
   try {
     const symbol = req.query.symbol || 'ixic';
-    const browser = await launch();
+    const browser = await launch(process.env.http_proxy);
     const page = await browser.newPage();
     await page.emulate(iphone6);
     const response = await page.goto(`https://www.google.com/search?hl=en&q=${symbol}`)
