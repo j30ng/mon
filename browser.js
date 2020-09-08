@@ -9,6 +9,6 @@ const launchArgs = [
   '--disable-dev-shm-usage'
 ];
 
-const launch = (proxy) => puppeteer.launch({args: launchArgs.concat(proxy ? [proxy] : [])});
+const launch = (proxy) => puppeteer.launch({args: launchArgs.concat(proxy ? [`--proxy-server=${proxy}`] : [])});
 
 module.exports = {launch, iphone6: puppeteer.devices['iPhone 6']};
