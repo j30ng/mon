@@ -16,7 +16,7 @@ router.get('/google.png', async function (req, res, next) {
     }
     res.contentType('png');
     res.send(await page.screenshot());
-  } catch {
+  } finally {
     typeof response !== 'undefined' && response.close();
     typeof page !== 'undefined' && page.close();
     typeof browser !== 'undefined' && browser.close();
