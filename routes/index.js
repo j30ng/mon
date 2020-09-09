@@ -3,7 +3,7 @@ const {launch, iphone6} = require('../browser');
 
 const router = express.Router();
 
-router.get('/google', async function (req, res, next) {
+router.get('/google.png', async function (req, res, next) {
   try {
     const symbol = req.query.symbol || 'ixic';
     const browser = await launch(process.env.http_proxy);
