@@ -15,7 +15,7 @@ router.get('/google.png', async function (req, res, next) {
       return;
     }
     res.contentType('png');
-    res.send(await page.screenshot());
+    res.send(await page.screenshot({clip: {y:160, height: 490, width: 373, x: 0}}));
   } finally {
     typeof response !== 'undefined' && response.close();
     typeof page !== 'undefined' && page.close();
